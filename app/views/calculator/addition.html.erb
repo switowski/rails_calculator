@@ -1,2 +1,9 @@
-<h1>Calculator#addition</h1>
-<%= form_tag calculator_addition_path do %>
+<h1>Addition calculator</h1>
+<%= flash[:notice] if flash[:notice] %>
+
+<%= form_tag calculator_addition_path, :method=>'post' do %>
+  <%= label_tag 'left_number' %> <%= text_field_tag 'left_number' %>
+  +
+  <%= label_tag 'right_number' %> <%= text_field_tag 'right_number' %>
+  <%= submit_tag 'Calculate !' %>
+<% end %>
